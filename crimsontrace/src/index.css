@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-200;
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 10px rgba(225, 29, 72, 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.3);
+  }
+  
+  .spinner {
+    @apply inline-block w-4 h-4 border-2 border-rose-500 border-t-transparent rounded-full animate-spin;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-rose-500/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-rose-500/50;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}

@@ -1,0 +1,33 @@
+{
+  "suspicious_accounts": [
+    { "account_id": "ACC_001", "suspicion_score": 95.2, "detected_patterns": ["cycle_length_3", "high_velocity"], "ring_id": "RING_001" },
+    { "account_id": "ACC_002", "suspicion_score": 88.0, "detected_patterns": ["cycle_length_3"], "ring_id": "RING_001" },
+    { "account_id": "ACC_003", "suspicion_score": 82.5, "detected_patterns": ["cycle_length_3"], "ring_id": "RING_001" },
+    { "account_id": "ACC_007", "suspicion_score": 76.1, "detected_patterns": ["fan_out", "high_velocity"], "ring_id": "RING_002" },
+    { "account_id": "ACC_008", "suspicion_score": 71.3, "detected_patterns": ["shell_chain"], "ring_id": "RING_002" }
+  ],
+  "fraud_rings": [
+    { "ring_id": "RING_001", "member_accounts": ["ACC_001", "ACC_002", "ACC_003"], "pattern_type": "cycle", "risk_score": 95.3 },
+    { "ring_id": "RING_002", "member_accounts": ["ACC_007", "ACC_008", "ACC_009", "ACC_010"], "pattern_type": "fan_out", "risk_score": 78.4 }
+  ],
+  "summary": {
+    "total_accounts_analyzed": 50,
+    "suspicious_accounts_flagged": 5,
+    "fraud_rings_detected": 2,
+    "processing_time_seconds": 1.2
+  },
+  "all_nodes": ["ACC_001", "ACC_002", "ACC_003", "ACC_004", "ACC_005", "ACC_006", "ACC_007", "ACC_008", "ACC_009", "ACC_010"],
+  "all_edges": [
+    { "source": "ACC_001", "target": "ACC_002", "amount": 5000 },
+    { "source": "ACC_002", "target": "ACC_003", "amount": 4800 },
+    { "source": "ACC_003", "target": "ACC_001", "amount": 4600 },
+    { "source": "ACC_004", "target": "ACC_002", "amount": 1200 },
+    { "source": "ACC_005", "target": "ACC_002", "amount": 800 },
+    { "source": "ACC_006", "target": "ACC_002", "amount": 950 },
+    { "source": "ACC_007", "target": "ACC_008", "amount": 3000 },
+    { "source": "ACC_007", "target": "ACC_009", "amount": 2500 },
+    { "source": "ACC_007", "target": "ACC_010", "amount": 2200 },
+    { "source": "ACC_004", "target": "ACC_005", "amount": 400 },
+    { "source": "ACC_006", "target": "ACC_007", "amount": 7000 }
+  ]
+}

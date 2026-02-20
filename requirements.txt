@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pandas
+networkx
+python-multipart
+python-dotenv
+torch
+torch-geometric
+scikit-learn
+joblib
